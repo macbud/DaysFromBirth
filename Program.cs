@@ -1,15 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Enter year of birth");
-int yearOfBirth = int.Parse(Console.ReadLine());
+﻿Console.WriteLine("Enter day of birth in format: dd.mm.yyyy");
 
-Console.WriteLine("Enter month of birth");
-int monthOfBirth = int.Parse(Console.ReadLine());
+TimeSpan timeSpan = DateTime.Now - DateTime.Parse(Console.ReadLine());
 
-Console.WriteLine("Enter day of birth");
-int dayOfBirth = int.Parse(Console.ReadLine());
+Console.WriteLine("You were born: {0} days and {1} hours ago", timeSpan.Days, timeSpan.Hours);
 
-DateTime dateOfBirth = new DateTime(yearOfBirth, monthOfBirth, dayOfBirth);
-
-TimeSpan timeSpan = DateTime.Now - dateOfBirth;
-
-Console.WriteLine($"Your were born: {timeSpan.TotalDays} days ago");
